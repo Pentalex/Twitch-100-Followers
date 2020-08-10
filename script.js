@@ -20,8 +20,7 @@ function findID(name) {
 
 function findFirstFollowers() {
     
-    var d3 = document.getElementById('delete')
-    d3.remove();
+    
     var d2 = document.getElementById('root')
     var d4 = document.getElementById('username')
     d2.insertAdjacentHTML('afterend', '<table class="table"> <thead class="thead-dark"><tr><th scope="col">#</th><th scope="col">Username</th><th scope="col">Follow date</th></tr></thead><tbody id="0"></tbody></table>')
@@ -43,22 +42,29 @@ function findFirstFollowers() {
     .then(data => {
         console.log(data);
         for(i in data.follows)
+        
             if(i === '0'){
+                var trunc = data.follows[i].created_at.substr(0, 10);
                 p = parseInt(i) + 1
                 console.log(p)
-                d1.insertAdjacentHTML('afterbegin', '<tr id="' + p + '"> <th scope="row">' + p + '</th><td>' + data.follows[i].user.display_name + '</td><td>' + data.follows[i].created_at + '</td>')
+                d1.insertAdjacentHTML('afterbegin', '<tr id="' + p + '"> <th scope="row">' + p + '</th><td>' + data.follows[i].user.display_name + '</td><td>' + trunc + '</td>')
             }
             else{
+                var trunc = data.follows[i].created_at.substr(0, 10);
                 p = parseInt(i) + 1
                 d1 = document.getElementById(i)
-                d1.insertAdjacentHTML('afterend', '<tr id="' + p + '"> <th scope="row">' + p + '</th><td>' + data.follows[i].user.display_name + '</td><td>' + data.follows[i].created_at + '</td>')
+                d1.insertAdjacentHTML('afterend', '<tr id="' + p + '"> <th scope="row">' + p + '</th><td>' + data.follows[i].user.display_name + '</td><td>' + trunc + '</td>')
             }
-            console.log("This user has been following since " + data.follows[i].created_at + " and his username is " + data.follows[i].user.display_name)
-        
-            
+            console.log("This user has been following since " + data.follows[i].created_at + " and his username is " + data.follows[i].user.display_name)      
     })
+
+
+
+
     d4.remove();
     d2.remove();
+    var d3 = document.getElementById('delete')
+    d3.remove();
     var d3 = document.getElementById('delete')
     d3.remove();
     });   
