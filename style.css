@@ -47,9 +47,8 @@
 
   }
 
-  footer
-{
-  padding-top: 95vh;
-  padding-bottom: 2vh;
-  padding-left: 38%;
-}
+  #footer{
+    padding-top: 95vh;
+    padding-bottom: 2vh;
+    padding-left: 38%;
+  }
