@@ -44,13 +44,11 @@ function findFirstFollowers() {
         for(i in data.follows)
         
             if(i === '0'){
-                var trunc = data.follows[i].created_at.substr(0, 10);
-                p = parseInt(i) + 1
+
                 d1.insertAdjacentHTML('afterbegin', '<tr id="' + p + '"> <th scope="row">' + p + '</th><td>' + data.follows[i].user.display_name + '</td><td>' + trunc + '</td>')
             }
             else{
-                var trunc = data.follows[i].created_at.substr(0, 10);
-                p = parseInt(i) + 1
+
                 d1 = document.getElementById(i)
                 d1.insertAdjacentHTML('afterend', '<tr id="' + p + '"> <th scope="row">' + p + '</th><td>' + data.follows[i].user.display_name + '</td><td>' + trunc + '</td>')
             }
