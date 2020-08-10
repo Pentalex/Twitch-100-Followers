@@ -1,0 +1,55 @@
+#root {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    margin: 1rem;
+    border: 1px solid gray;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .card {
+      flex: 1 1 calc(50% - 2rem);
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .card {
+      flex: 1 1 calc(33% - 2rem);
+    }
+  }
+  #outPopUp {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+
+  }
+
+
+  h3 {
+    position: absolute;
+    width: 600px;
+    height: 200px;
+    z-index: 15;
+    top: 25%;
+    left: 42.5%;
+    margin: -100px 0 0 -150px;
+
+  }
+
+  footer
+{
+  padding-top: 95vh;
+  padding-bottom: 2vh;
+  padding-left: 38%;
+}
