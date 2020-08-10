@@ -46,7 +46,6 @@ function findFirstFollowers() {
             if(i === '0'){
                 var trunc = data.follows[i].created_at.substr(0, 10);
                 p = parseInt(i) + 1
-                console.log(p)
                 d1.insertAdjacentHTML('afterbegin', '<tr id="' + p + '"> <th scope="row">' + p + '</th><td>' + data.follows[i].user.display_name + '</td><td>' + trunc + '</td>')
             }
             else{
