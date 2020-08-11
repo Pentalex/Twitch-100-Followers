@@ -7,6 +7,7 @@ var d3 = document.getElementById('delete')
 var d4 = document.getElementById('username')
 var d5 = document.getElementById('text')
 var d6 = document.getElementById('button')
+var d7 = document.getElementById('footer')
 function findID(name) {
     return new Promise((resolve, reject) => {
       fetch('https://api.twitch.tv/kraken/users?login=' + name, {
@@ -65,6 +66,7 @@ function findFirstFollowers() {
     d4.remove()
     d5.remove()
     d6.remove()
+    d7.remove()
     });   
     
 
